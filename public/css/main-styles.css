@@ -1,0 +1,22 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #4CCD99;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Take full width by default */
+    max-width: 1200px; /* Constrain to a maximum width */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 10px 20px; /* Optional padding */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

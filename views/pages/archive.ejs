@@ -1,0 +1,16 @@
+<ul class="post-list">
+    <% posts.forEach(post => {
+    <li class="post-item">
+        <h3>
+            <%= post.title %>
+        </h3>
+        <p>
+            <%= post.body %>
+        </p>
+        <p>
+            <%= "Posted on: " + post.date %>
+        </p>
+    </li> 
+    }); %>
+
+</ul>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/main-styles.css" />
+        <link rel="stylesheet" href="/css/nav-bar-styles.css" />
+        <link rel="stylesheet" href="/css/footer-styles.css" />
+
+        <title><%= locals.pageTitle || "undefined" %></title>
+    </head>
+    <body>
+        <header>
+            <%- include("../partials/navbar.ejs") %>
+        </header>
+
+        <main class="main-container">
+            <%- include(content) %>
+        </main>
+
+        <footer>
+            <%- include("../partials/footer.ejs") %>
+        </footer>
+
+        <script src="/js/main-script.js" charset="utf-8"></script>
+    </body>
+</html>
