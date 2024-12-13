@@ -1,5 +1,6 @@
-.navbar {
+#navbar {
     background-color: #007F73;
+    border-radius: 4px;
     color: #FFF455;
     padding: 10px 20px;
     position: sticky;
@@ -8,16 +9,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .navbar-container {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     justify-content: space-between;
 }

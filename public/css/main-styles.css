@@ -1,22 +1,112 @@
 body {
     font-family: "Ubuntu", sans-serif;
-    background-color: #4CCD99;
+    background-color: #44bd8c;
 }
 
-header,
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Take full width by default */
-    max-width: 1200px; /* Constrain to a maximum width */
-    margin: 0 auto; /* Center the content horizontally */
-    padding: 10px 20px; /* Optional padding */
+#page-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    padding: 0;
+    margin: 0px auto; /* Ensure central when over 1000px */
+}
+
+h1 {
+    color: #007F73;
+}
+
+.main-title {
+    color: #007F73;
+}
+.main-text {
+    font-size: large;
+    text-align: justify;
+    color: #ffffff;
+}
+
+#header-container {
+    display: block;
+}
+
+#main-container {
+    display: block;
+}
+
+#footer-container {
+    display: block;
+}
+
+.post-container {
+    background-color: #007F73;
+    border-radius: 10px;
+    margin: 1rem 2rem;
+    padding: 10px;
+}
+
+.post-title {
+    color: #FFC700;
+    margin: 5px 0;
+}
+
+.post-body {
+    color: #FFF455;
+    text-align: justify;
+}
+
+.post-date {
+    font-weight: 900;
+    color: #FFC700;
+    margin: 0 20px 0 0;
+    text-align: end;
+
+}
+
+.add-post-form {
+    color: #FFC700;
+    padding: 10px;
+    border-radius: 8px;
+    background-color:#007F73;
+}
+
+.add-post-form .form-group {
+    margin-bottom: 15px;
+}
+
+.add-post-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-post-form input,
+.add-post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
     box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.add-post-form textarea {
+    resize: vertical; /* Allow only vertical resizing */
+    min-height: 100px; /* Set an initial minimum height */
+    max-height: 400px; /* Optional: Set a maximum height */
 }
+
+.add-post-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-post-form button:hover {
+    background-color: #0056b3;
+}
+
