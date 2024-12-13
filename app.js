@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/new-post", (req, res) => {
+
     res.render("layouts/main", 
         {
             content: "../pages/new-post",
@@ -47,13 +48,13 @@ app.get("/new-post", (req, res) => {
 app.post("/new-post", (req, res) => {
     const { title, body } = req.body;
     addPost(title, body);
+
     res.redirect("/new-post");
 })
 
 app.get("/edit-post/:id", (req, res) => {
     const postId = Number(req.params.id);
     const post = findPostById(postId);
-    console.log(postId);
 
     if (post) {
         res.render("layouts/main",
@@ -72,6 +73,7 @@ app.post("/edit-post/:id", (req, res) => {
     const postId = Number(req.params.id);
     const { title, body } = req.body;
     updatePostById(postId, title, body);
+    
     res.redirect("/archive");
 });
 
