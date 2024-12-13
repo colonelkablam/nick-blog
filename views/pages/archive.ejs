@@ -6,9 +6,13 @@
     <p class="post-body">
         <%= post.body %>
     </p>
-    <p class="post-date">
-        <%= "Posted on: " + post.date %>
-    </p>
+    <div>
+        <p class="post-date">
+            <%= "Posted on: " + post.date %>
+        </p>
+        <a href="/edit-post/<%= post.id %>"><button>Edit</button></a> <!-- Pass post index -->
+    </div>
+
 </div>
 
 <% }); %>

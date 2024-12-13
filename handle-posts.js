@@ -1,6 +1,10 @@
 // Define the Post class
 class Post {
+
+    static currentId = 0; // Static property to track the current ID
+
     constructor(title, body, date = new Date()) {
+        this.id = Post.currentId++; // Assign the current ID and increment
         this.title = title;
         this.body = body;
         this.date = date.toLocaleString(); // Format the date
@@ -24,6 +28,19 @@ const getPosts = () => {
     return posts;
 };
 
+const findPostById = (id) => {
+    return posts.find(post => post.id === id); // Convert id to a number
+};
+
+const updatePostById = (id, title, body) => {
+    const post = findPostById(id);
+    if (post) {
+        post.title = title;
+        post.body = body;
+        post.date = new Date().toLocaleString(); // Update the timestamp
+    }
+};
+
 // Function to add a new post
 const addPost = (title, body, date = new Date()) => {
     const newPost = new Post(title, body, date); // Create a new Post instance
@@ -42,4 +59,4 @@ const getLastPost = () => {
 };
 
 // Export the functions as ES module
-export { getPosts, addPost, removePost, getLastPost };
+export { getPosts, addPost, removePost, getLastPost, updatePostById, findPostById };

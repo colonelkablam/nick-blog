@@ -4,7 +4,7 @@ import {dirname} from "path";
 import {join} from "path";
 
 import { fileURLToPath } from "url";
-import { getPosts, addPost, removePost, getLastPost } from "./handle-posts.js"; // Import the posts logic
+import { getPosts, addPost, removePost, getLastPost, updatePostById, findPostById } from "./handle-posts.js"; // Import the posts logic
 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -48,8 +48,32 @@ app.post("/new-post", (req, res) => {
     const { title, body } = req.body;
     addPost(title, body);
     res.redirect("/new-post");
-    console.log(title, body);
 })
+
+app.get("/edit-post/:id", (req, res) => {
+    const postId = Number(req.params.id);
+    const post = findPostById(postId);
+    console.log(postId);
+
+    if (post) {
+        res.render("layouts/main",
+            {
+                content: "../pages/edit-post",
+                pageTitle: "Edit Post",
+                post,
+                postId,
+            });    
+        } else {
+        res.status(404).send("Post not found");
+    }
+});
+
+app.post("/edit-post/:id", (req, res) => {
+    const postId = Number(req.params.id);
+    const { title, body } = req.body;
+    updatePostById(postId, title, body);
+    res.redirect("/archive");
+});
 
 app.get("/archive", (req, res) => {
     const posts = getPosts();
