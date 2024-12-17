@@ -95,19 +95,86 @@ h1 {
     max-height: 400px; /* Optional: Set a maximum height */
 }
 
-.add-post-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+/* Container for form buttons */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Update Post Button */
+.btn-submit {
+    padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
 }
 
-.add-post-form button:hover {
+.btn-submit:hover {
     background-color: #0056b3;
 }
+
+/* Cancel Button */
+.btn-cancel {
+    padding: 10px 10px;
+    background-color: #FFF455;
+    color:#333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #bbb;
+}
+
+/* Container for edit buttons */
+.edit-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Edit Button */
+.btn-edit {
+    padding: 10px 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    width: 3rem;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button */
+.btn-delete {
+    padding: 10px 10px;
+    background-color: #FFF455;
+    color:#333;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    width: 3rem;
+
+}
+
+.btn-delete:hover {
+    background-color: #FFC700;
+}
+
 

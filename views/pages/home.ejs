@@ -8,15 +8,7 @@
 </p>
 <h2 class="main-title">Most Recent Post</h2>
 
-<div class="post-container">
-    <h3 class="post-title"><%= lastPost.title %></h3>
-    <p class="post-body">
-        <%= lastPost.body %>
-    </p>
-    <p class="post-date">
-        <%= "Posted on: " + lastPost.date %>
-    </p>
-</div>
+<%- include("../partials/post.ejs", { lastPost: lastPost }) %>
 
 
 

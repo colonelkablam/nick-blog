@@ -1,18 +1,6 @@
 <h1>Archive</h1>
 <% posts.forEach(post => { %>
 
-<div class="post-container">
-    <h3 class="post-title"><%= post.title %></h3>
-    <p class="post-body">
-        <%= post.body %>
-    </p>
-    <div>
-        <p class="post-date">
-            <%= "Posted on: " + post.date %>
-        </p>
-        <a href="/edit-post/<%= post.id %>"><button>Edit</button></a> <!-- Pass post index -->
-    </div>
-
-</div>
+    <%- include("../partials/post-edit.ejs", { post: post }) %>
 
 <% }); %>
