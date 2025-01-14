@@ -1,0 +1,16 @@
+<h1>Are you sure you want to delete this post?</h1>
+
+<form action="/delete-post/<%= post.id %>" method="POST" class="add-post-form">
+    <div class="form-group">
+        <label for="title">Post Title:</label>
+        <input type="text" id="title" name="title" required value="<%= post.title %>">
+    </div>
+    <div class="form-group">
+        <label for="body">Post Body:</label>
+        <textarea id="body" name="body" required><%= post.body %></textarea>
+    </div>
+    <div class="form-buttons">
+        <button type="submit" class="btn-submit">DELETE POST</button>
+        <a href="/archive" class="btn-cancel">Cancel</a>
+    </div>
+</form>

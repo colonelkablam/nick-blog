@@ -47,10 +47,15 @@ const addPost = (title, body, date = new Date()) => {
     posts.push(newPost); // Add it to the array
 };
 
-// Function to remove a post (e.g., by index)
-const removePost = (index) => {
-    if (index >= 0 && index < posts.length) {
-        posts.splice(index, 1); // Remove the post by index
+// Function to remove a post (e.g., by id)
+const removePost = (postId) => {
+    // Find the index of the post with the given id
+    const postIndex = posts.findIndex(post => post.id === postId);
+
+    if (postIndex >= 0) { // If the post is found
+        posts.splice(postIndex, 1); // Remove the post at the found index
+    } else {
+        console.log("Post with the specified ID not found");
     }
 };
 

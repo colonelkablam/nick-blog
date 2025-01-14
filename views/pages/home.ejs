@@ -8,7 +8,12 @@
 </p>
 <h2 class="main-title">Most Recent Post</h2>
 
+<% if (locals.lastPost) { %> 
 <%- include("../partials/post.ejs", { lastPost: lastPost }) %>
+<% } else { %>
+    <p class="main-text">[ No posts in the archive. ]</p>
+<% } %> 
+
 
 
 

@@ -49,7 +49,7 @@ app.post("/new-post", (req, res) => {
     const { title, body } = req.body;
     addPost(title, body);
 
-    res.redirect("/new-post");
+    res.redirect("/archive");
 })
 
 app.get("/edit-post/:id", (req, res) => {
@@ -73,6 +73,30 @@ app.post("/edit-post/:id", (req, res) => {
     const postId = Number(req.params.id);
     const { title, body } = req.body;
     updatePostById(postId, title, body);
+    
+    res.redirect("/archive");
+});
+
+app.get("/delete-post/:id", (req, res) => {
+    const postId = Number(req.params.id);
+    const post = findPostById(postId);   
+
+    if (post) {
+        res.render("layouts/main",
+            {
+                content: "../pages/delete-post",
+                pageTitle: "Delete Post",
+                post,
+                postId,
+            });    
+        } else {
+        res.status(404).send("Post not found");
+    }
+});
+
+app.post("/delete-post/:id", (req, res) => {
+    const postId = Number(req.params.id);
+    removePost(postId);
     
     res.redirect("/archive");
 });

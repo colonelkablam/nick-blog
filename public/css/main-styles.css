@@ -43,6 +43,10 @@ h1 {
     padding: 10px;
 }
 
+.post-container .last {
+    background-color: #cf503f;
+}
+
 .post-title {
     color: #FFC700;
     margin: 5px 0;

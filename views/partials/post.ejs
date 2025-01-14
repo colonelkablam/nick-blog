@@ -1,9 +1,9 @@
-<div class="post-container">
+<div class="post-container" <%= lastPost %>>
     <h3 class="post-title"><%= lastPost.title %></h3>
     <p class="post-body">
         <%= lastPost.body %>
     </p>
     <p class="post-date">
-        <%= "Posted on: " + lastPost.date %>
+        <%= "Posted on: " + lastPost.date + ". Post id: " + lastPost.id %>
     </p>
 </div>

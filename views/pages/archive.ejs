@@ -1,6 +1,10 @@
 <h1>Archive</h1>
-<% posts.forEach(post => { %>
+<% if (locals.posts.length > 0) { %> 
+    <% posts.forEach(post => { %>
 
-    <%- include("../partials/post-edit.ejs", { post: post }) %>
+        <%- include("../partials/post-edit.ejs", { post: post }) %>
+    
+    <% }); %>    <% } else { %>
+        <p class="main-text">[ No posts in the archive. ]</p>
+    <% } %> 
 
-<% }); %>
